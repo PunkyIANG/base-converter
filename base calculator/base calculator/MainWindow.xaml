@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:a="clr-namespace:base_calculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="350">
     <Window.Resources>
@@ -44,13 +45,15 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Text="DEC:" Style="{StaticResource TxtBlock}"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="OCT:" Style="{StaticResource TxtBlock}"/>
         <TextBlock Grid.Column="0" Grid.Row="3" Text="BIN:" Style="{StaticResource TxtBlock}"/>
-        <TextBox Name="CustomBase" Grid.Column="0" Grid.Row="4" Text="CSTM:" Style="{StaticResource TxtBox}"/>
-
-        <TextBox x:Name="HexInput" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
-        <TextBox x:Name="DecInput" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
-        <TextBox x:Name="OctInput" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
-        <TextBox x:Name="BinInput" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
-        <TextBox x:Name="CustomInput" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Text="-" Style="{StaticResource TxtBox}"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="CSTM:" Style="{StaticResource TxtBlock}"/>
+        
+        <!-- <TextBox Name="CustomBase" Grid.Column="0" Grid.Row="4" Text="CSTM:" Style="{StaticResource TxtBox}"/> -->
+        
+        <TextBox x:Name="HexInput" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
+        <TextBox x:Name="DecInput" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
+        <TextBox x:Name="OctInput" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
+        <TextBox x:Name="BinInput" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
+        <TextBox x:Name="CustomInput" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Text="-" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
 
 
         <Button x:Name="Btn1" Grid.Column="0" Grid.Row="5" Content="1" Focusable="False" Click="BtnClick" Tag="1" />
