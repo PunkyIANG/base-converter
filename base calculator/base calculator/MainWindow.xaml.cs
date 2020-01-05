@@ -44,7 +44,6 @@ namespace base_calculator
             IOFields.Add("oct", new IOResultField(8, new Regex("[0-7]"), OctInput));
             IOFields.Add("dec", new IOResultField(10, new Regex("[0-9]"), DecInput));
             IOFields.Add("hex", new IOResultField(16, new Regex("[0-9a-fA-F]"), HexInput));
-            //IOFields.Add("cstm", new IOResultField(0, new Regex("$.^"), CustomInput)); //this regex always returns false, will use for no custom base specified
         }
 
         private void BtnClick(object sender, RoutedEventArgs e) 

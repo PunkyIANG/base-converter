@@ -21,20 +21,19 @@
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
     </Window.Resources>
-    
+
     <Grid x:Name="MainGrid" Margin="0,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="49*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -47,35 +46,33 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Text="DEC:" Style="{StaticResource TxtBlock}"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="OCT:" Style="{StaticResource TxtBlock}"/>
         <TextBlock Grid.Column="0" Grid.Row="3" Text="BIN:" Style="{StaticResource TxtBlock}"/>
-        <TextBlock Grid.Column="0" Grid.Row="4" Text="CSTM:" Style="{StaticResource TxtBlock}"/>
-        
+
         <!-- <TextBox Name="CustomBase" Grid.Column="0" Grid.Row="4" Text="CSTM:" Style="{StaticResource TxtBox}"/> -->
-        
+
         <TextBox x:Name="HexInput" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
         <TextBox x:Name="DecInput" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
         <TextBox x:Name="OctInput" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
         <TextBox x:Name="BinInput" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
-        <TextBox x:Name="CustomInput" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Text="*work in progress*" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
 
 
-        <Button x:Name="Btn1" Grid.Column="0" Grid.Row="5" Content="1" Focusable="False" Click="BtnClick" Tag="1" />
-        <Button x:Name="Btn2" Grid.Column="1" Grid.Row="5" Content="2" Focusable="False" Click="BtnClick" Tag="2" />
-        <Button x:Name="Btn3" Grid.Column="2" Grid.Row="5" Content="3" Focusable="False" Click="BtnClick" Tag="3" />
-        <Button x:Name="Btn4" Grid.Column="0" Grid.Row="6" Content="4" Focusable="False" Click="BtnClick" Tag="4" />
-        <Button x:Name="Btn5" Grid.Column="1" Grid.Row="6" Content="5" Focusable="False" Click="BtnClick" Tag="5" />
-        <Button x:Name="Btn6" Grid.Column="2" Grid.Row="6" Content="6" Focusable="False" Click="BtnClick" Tag="6" />
-        <Button x:Name="Btn7" Grid.Column="0" Grid.Row="7" Content="7" Focusable="False" Click="BtnClick" Tag="7" />
-        <Button x:Name="Btn8" Grid.Column="1" Grid.Row="7" Content="8" Focusable="False" Click="BtnClick" Tag="8" />
-        <Button x:Name="Btn9" Grid.Column="2" Grid.Row="7" Content="9" Focusable="False" Click="BtnClick" Tag="9" />
-        <Button x:Name="Btn0" Grid.Column="0" Grid.Row="8" Content="0" Focusable="False" Click="BtnClick" Tag="0" Grid.ColumnSpan="3"  />
+        <Button x:Name="Btn1" Grid.Column="0" Grid.Row="4" Content="1" Focusable="False" Click="BtnClick" Tag="1" />
+        <Button x:Name="Btn2" Grid.Column="1" Grid.Row="4" Content="2" Focusable="False" Click="BtnClick" Tag="2" />
+        <Button x:Name="Btn3" Grid.Column="2" Grid.Row="4" Content="3" Focusable="False" Click="BtnClick" Tag="3" />
+        <Button x:Name="Btn4" Grid.Column="0" Grid.Row="5" Content="4" Focusable="False" Click="BtnClick" Tag="4" />
+        <Button x:Name="Btn5" Grid.Column="1" Grid.Row="5" Content="5" Focusable="False" Click="BtnClick" Tag="5" />
+        <Button x:Name="Btn6" Grid.Column="2" Grid.Row="5" Content="6" Focusable="False" Click="BtnClick" Tag="6" />
+        <Button x:Name="Btn7" Grid.Column="0" Grid.Row="6" Content="7" Focusable="False" Click="BtnClick" Tag="7" />
+        <Button x:Name="Btn8" Grid.Column="1" Grid.Row="6" Content="8" Focusable="False" Click="BtnClick" Tag="8" />
+        <Button x:Name="Btn9" Grid.Column="2" Grid.Row="6" Content="9" Focusable="False" Click="BtnClick" Tag="9" />
+        <Button x:Name="Btn0" Grid.Column="0" Grid.Row="7" Content="0" Focusable="False" Click="BtnClick" Tag="0" Grid.ColumnSpan="3"  />
 
-        <Button x:Name="BtnA" Grid.Column="3" Grid.Row="6" Content="A" Focusable="False" Click="BtnClick" Tag="A" />
-        <Button x:Name="BtnB" Grid.Column="4" Grid.Row="6" Content="B" Focusable="False" Click="BtnClick" Tag="B" />
-        <Button x:Name="BtnC" Grid.Column="3" Grid.Row="7" Content="C" Focusable="False" Click="BtnClick" Tag="C" />
-        <Button x:Name="BtnD" Grid.Column="4" Grid.Row="7" Content="D" Focusable="False" Click="BtnClick" Tag="D" />
-        <Button x:Name="BtnE" Grid.Column="3" Grid.Row="8" Content="E" Focusable="False" Click="BtnClick" Tag="E" />
-        <Button x:Name="BtnF" Grid.Column="4" Grid.Row="8" Content="F" Focusable="False" Click="BtnClick" Tag="F" />
+        <Button x:Name="BtnA" Grid.Column="3" Grid.Row="5" Content="A" Focusable="False" Click="BtnClick" Tag="A" />
+        <Button x:Name="BtnB" Grid.Column="4" Grid.Row="5" Content="B" Focusable="False" Click="BtnClick" Tag="B" />
+        <Button x:Name="BtnC" Grid.Column="3" Grid.Row="6" Content="C" Focusable="False" Click="BtnClick" Tag="C" />
+        <Button x:Name="BtnD" Grid.Column="4" Grid.Row="6" Content="D" Focusable="False" Click="BtnClick" Tag="D" />
+        <Button x:Name="BtnE" Grid.Column="3" Grid.Row="7" Content="E" Focusable="False" Click="BtnClick" Tag="E" />
+        <Button x:Name="BtnF" Grid.Column="4" Grid.Row="7" Content="F" Focusable="False" Click="BtnClick" Tag="F" />
 
-        <Button x:Name="BtnBackSpc" Grid.Column="3" Grid.Row="5" Content="⌫" Focusable="False" Click="Backspace" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnBackSpc" Grid.Column="3" Grid.Row="4" Content="⌫" Focusable="False" Click="Backspace" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
