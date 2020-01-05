@@ -64,7 +64,7 @@ namespace base_calculator
                 if (field.Value.baseTextBox == (TextBox)sender)
                 {
                     focusedIOResultField = field.Value;
-                    Console.WriteLine("focused " + field.Key);
+                    //Console.WriteLine("focused " + field.Key);
                     break;
                 }
             }
@@ -92,7 +92,7 @@ namespace base_calculator
             else
                 result = Convert.ToInt64(focusedIOResultField.baseTextBox.Text, focusedIOResultField.numberBase);
 
-            Console.WriteLine("changed textbox " + focusedIOResultField.numberBase);
+            //Console.WriteLine("changed textbox " + focusedIOResultField.numberBase);
             foreach (var field in IOFields)
             {
                 field.Value.baseTextBox.Text = Convert.ToString(result, field.Value.numberBase);
