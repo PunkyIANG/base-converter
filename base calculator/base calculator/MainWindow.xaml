@@ -14,6 +14,8 @@
 
         <Style x:Key = "TxtBox" TargetType="{x:Type TextBox}">
             <EventSetter Event="GotFocus" Handler="TxtBoxGotFocus"/>
+            <EventSetter Event="PreviewTextInput" Handler="PreviewTextInput"/>
+            <EventSetter Event="TextChanged" Handler="TextChanged"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -49,11 +51,11 @@
         
         <!-- <TextBox Name="CustomBase" Grid.Column="0" Grid.Row="4" Text="CSTM:" Style="{StaticResource TxtBox}"/> -->
         
-        <TextBox x:Name="HexInput" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
-        <TextBox x:Name="DecInput" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
-        <TextBox x:Name="OctInput" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
-        <TextBox x:Name="BinInput" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
-        <TextBox x:Name="CustomInput" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Text="-" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
+        <TextBox x:Name="HexInput" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
+        <TextBox x:Name="DecInput" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
+        <TextBox x:Name="OctInput" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
+        <TextBox x:Name="BinInput" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Text="0" Style="{StaticResource TxtBox}"/>
+        <TextBox x:Name="CustomInput" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Text="*work in progress*" Style="{StaticResource TxtBox}" PreviewTextInput="PreviewTextInput"/>
 
 
         <Button x:Name="Btn1" Grid.Column="0" Grid.Row="5" Content="1" Focusable="False" Click="BtnClick" Tag="1" />

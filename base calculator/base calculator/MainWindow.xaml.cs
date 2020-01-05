@@ -33,8 +33,9 @@ namespace base_calculator
         }
 
         Dictionary<string, IOResultField> IOFields = new Dictionary<string, IOResultField>();
-
         IOResultField focusedIOResultField;
+        long result;
+
 
         public MainWindow()
         {
@@ -43,10 +44,10 @@ namespace base_calculator
             IOFields.Add("oct", new IOResultField(8, new Regex("[0-7]"), OctInput));
             IOFields.Add("dec", new IOResultField(10, new Regex("[0-9]"), DecInput));
             IOFields.Add("hex", new IOResultField(16, new Regex("[0-9a-fA-F]"), HexInput));
-            IOFields.Add("cstm", new IOResultField(0, new Regex("$.^"), CustomInput)); //this regex always returns false, will use for no custom base specified
+            //IOFields.Add("cstm", new IOResultField(0, new Regex("$.^"), CustomInput)); //this regex always returns false, will use for no custom base specified
         }
 
-        private void BtnClick(object sender, RoutedEventArgs e) ///
+        private void BtnClick(object sender, RoutedEventArgs e) 
         {
             var focusedTextBox = focusedIOResultField.baseTextBox;
 
@@ -57,7 +58,7 @@ namespace base_calculator
             }
         }
 
-        private void TxtBoxGotFocus(object sender, RoutedEventArgs e) ///
+        private void TxtBoxGotFocus(object sender, RoutedEventArgs e) 
         {
             foreach(var field in IOFields)
             {
@@ -70,7 +71,7 @@ namespace base_calculator
             }
         }
 
-        private void Backspace(object sender, RoutedEventArgs e) ///
+        private void Backspace(object sender, RoutedEventArgs e) 
         {
             var focusedTextBox = focusedIOResultField.baseTextBox; 
             if (!focusedIOResultField.Equals(null) && focusedTextBox.Text.Length != 0) //can't directly compare struct type vars via == and !=
@@ -80,9 +81,25 @@ namespace base_calculator
             }
         }
 
-        private void PreviewTextInput(object sender, TextCompositionEventArgs e) ///
+        private void PreviewTextInput(object sender, TextCompositionEventArgs e) 
         {
             e.Handled = !focusedIOResultField.baseRegex.IsMatch(e.Text);
+        }
+
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (focusedIOResultField.baseTextBox.Text == "")
+                result = 0;
+            else
+                result = Convert.ToInt64(focusedIOResultField.baseTextBox.Text, focusedIOResultField.numberBase);
+
+            Console.WriteLine("changed textbox " + focusedIOResultField.numberBase);
+            foreach (var field in IOFields)
+            {
+                field.Value.baseTextBox.Text = Convert.ToString(result, field.Value.numberBase);
+            }
+
+            focusedIOResultField.baseTextBox.Select(focusedIOResultField.baseTextBox.Text.Length, 0);
         }
     }
 }
